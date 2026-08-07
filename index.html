@@ -1316,6 +1316,43 @@ em, i, .italic {
 }
 
 
+
+/* Pure Potential Section — Dark Orange Matching Plaques & Cards */
+.filterable-section[data-section="potential"] .carousel-active-details,
+.filterable-section[data-section="potential"] .work-item {
+  background: #260b00 !important;
+  color: #ffe0d6 !important;
+  border: 1.5px solid rgba(255, 85, 0, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.filterable-section[data-section="potential"] .work-image {
+  background: #1a0700 !important;
+}
+
+.filterable-section[data-section="potential"] .active-work-title,
+.filterable-section[data-section="potential"] .work-title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.filterable-section[data-section="potential"] .active-work-desc,
+.filterable-section[data-section="potential"] .work-annotation {
+  color: #ffe0d6 !important;
+  line-height: 1.6;
+}
+
+.filterable-section[data-section="potential"] .active-work-counter,
+.filterable-section[data-section="potential"] .work-material-tag {
+  color: #ffaa80 !important;
+}
+
+.filterable-section[data-section="potential"] .work-status-badge.potential {
+  background: rgba(255, 85, 0, 0.2) !important;
+  color: #ff8855 !important;
+  border: 1px solid rgba(255, 85, 0, 0.4) !important;
+}
+
 /* Dark Mode Support for Holographic Cards */
 [data-theme="dark"] #holographic-grid .holographic-card {
   background: #14161d !important;
@@ -2483,6 +2520,28 @@ filterChips.forEach(chip => {
         else if (blk.classList.contains('subsection-header')) blk.style.display = 'flex';
         else blk.style.display = 'block';
       });
+    }
+
+    // Smooth scroll positioning for top UI filter links
+    let targetElement = null;
+    if (filter === 'potential') {
+      targetElement = document.querySelector('.filterable-section[data-section="potential"]');
+    } else if (filter === 'instantiated') {
+      targetElement = document.querySelector('.filterable-section[data-section="instantiated"]');
+    } else if (filter === 'asshole') {
+      targetElement = document.getElementById('asshole-carousel-section');
+    } else if (filter === 'prick') {
+      targetElement = document.getElementById('prick-carousel-section');
+    } else if (filter === 'material') {
+      targetElement = document.getElementById('asshole-materials');
+    } else if (filter === 'holographic') {
+      targetElement = document.getElementById('holographic-grid');
+    }
+
+    if (targetElement) {
+      setTimeout(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
     }
   });
 });
