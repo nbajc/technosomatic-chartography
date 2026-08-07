@@ -1205,6 +1205,90 @@ em, i, .italic {
   gap: 24px; 
 }
 
+
+/* Holographic Grid Section — White Cards with Crisp Black Typography */
+#holographic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+
+#holographic-grid .holographic-card {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#holographic-grid .holographic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+#holographic-grid .holographic-card .card-media-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  overflow: hidden;
+}
+
+#holographic-grid .holographic-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+#holographic-grid .holographic-card .card-details {
+  padding: 22px;
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#holographic-grid .holographic-card .work-title {
+  color: #1a1a1a !important;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#holographic-grid .holographic-card .work-status-badge {
+  background: #f0f2f5 !important;
+  color: #2c3e50 !important;
+  border: 1px solid #d0d5dd !important;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+#holographic-grid .holographic-card .work-material-tag {
+  color: #4a5568 !important;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+#holographic-grid .holographic-card .work-annotation {
+  color: #2d3748 !important;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
 /* Custom Interactive Video Frame */
 .video-card {
   background: var(--bg-card);
@@ -2252,39 +2336,54 @@ if (prickMatGrid) prickMatInv.forEach(m => prickMatGrid.appendChild(createMatInv
 // Populate Holographic Grid
 const holoGrid = document.getElementById('holographic-grid');
 holoGrid.innerHTML = `
-  <div class="video-card">
-    <video controls poster="nomad11.png">
-      <source src="Sequence.mp4" type="video/mp4">
-      <source src="Sequence 01_1.mp4.3gp" type="video/3gpp">
-      Your browser does not support HTML5 video.
-    </video>
-    <div class="video-meta">
-      <div class="work-title-row">
+  <!-- Video Installation Card -->
+  <div class="holographic-card">
+    <div class="card-media-wrapper">
+      <video controls poster="nomad11.png" style="width:100%; aspect-ratio: 16/9; object-fit: cover;">
+        <source src="Sequence.mp4" type="video/mp4">
+        <source src="Sequence 01_1.mp4.3gp" type="video/3gpp">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <div class="card-details">
+      <div class="work-title-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
         <div class="work-title">Holographic Slicing — Video Installation</div>
         <span class="work-status-badge">Liminal Prototype</span>
       </div>
-      <div class="work-material-tag" style="margin-top: 4px;">Sequence.mp4 / Sequence_01_1_mp4.3gp</div>
-      <div class="work-annotation" style="margin-top: 8px;">Threshold between digital investigation and materialized mirror—holographic layering explores refraction and transparency altering anatomical rendering.</div>
+      <div class="work-material-tag">File: Sequence.mp4 / Sequence_01_1_mp4.3gp</div>
+      <div class="work-annotation">Threshold between digital investigation and materialized mirror—holographic layering explores refraction and transparency altering anatomical rendering.</div>
     </div>
   </div>
 
-<div class="work-image" onclick="openLightboxBySrc('nOMADaRT (1).png', 'nOMADaRT (1) Image', 'Image from nOMADaRT (1)')">
-  <img src="nOMADaRT (1).png" alt="nOMADaRT (1)">
-  <div class="hover-zoom-hint">🔍 Expand</div>
-</div>
-
-  <div class="work-item" data-category="holographic">
-    <div class="work-image" onclick="openLightboxBySrc('nomad11.png', 'Holographic Slicing — Image Prototype', 'Investigation of depth and parallax in holographic presentation—what shifts when anatomical subject rendered across multiple optical planes.')">
-      <img src="nomad11.png" alt="Holographic Prototype Image">
-      <div class="hover-zoom-hint">🔍 Expand</div>
+  <!-- nOMADaRT (1).png Render Study Card -->
+  <div class="holographic-card" style="cursor: pointer;" onclick="openLightboxBySrc('nOMADaRT (1).png', 'Holographic Slicing — Render Study', 'Exploration of refractive depth and volumetric layering in digital space.')">
+    <div class="card-media-wrapper">
+      <img src="nOMADaRT (1).png" alt="nOMADaRT (1) Render Study">
+      <div class="hover-zoom-hint" style="opacity: 1; top: 12px; right: 12px;">🔍 Expand</div>
     </div>
-    <div class="work-details">
-      <div class="work-title-row">
+    <div class="card-details">
+      <div class="work-title-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <div class="work-title">Holographic Slicing — Render Study</div>
+        <span class="work-status-badge">Prototype</span>
+      </div>
+      <div class="work-material-tag">Multi-plane Optical Render (nOMADaRT 1)</div>
+      <div class="work-annotation">Exploration of refractive depth and volumetric layering in digital space—materializing anatomical structure across computational planes.</div>
+    </div>
+  </div>
+
+  <!-- nomad11.png Prototype Image Card -->
+  <div class="holographic-card" style="cursor: pointer;" onclick="openLightboxBySrc('nomad11.png', 'Holographic Slicing — Image Prototype', 'Investigation of depth and parallax in holographic presentation—what shifts when anatomical subject rendered across multiple optical planes.')">
+    <div class="card-media-wrapper">
+      <img src="nomad11.png" alt="Holographic Prototype Image">
+      <div class="hover-zoom-hint" style="opacity: 1; top: 12px; right: 12px;">🔍 Expand</div>
+    </div>
+    <div class="card-details">
+      <div class="work-title-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
         <div class="work-title">Holographic Slicing — Image</div>
         <span class="work-status-badge">Prototype</span>
       </div>
-      <div class="work-material-tag">Multi-plane Optical Rendering</div>
-      <div class="work-annotation" style="margin-top: 6px;">Investigation of depth and parallax in holographic presentation—what shifts when anatomical subject rendered across multiple optical planes.</div>
+      <div class="work-material-tag">Multi-plane Optical Rendering (nomad11)</div>
+      <div class="work-annotation">Investigation of depth and parallax in holographic presentation—what shifts when anatomical subject rendered across multiple optical planes.</div>
     </div>
   </div>
 `;
