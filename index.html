@@ -17,8 +17,8 @@
   --bg-secondary: #f8f9fa;
   --bg-card: #ffffff;
   --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #888888;
+  --text-secondary: #222222;
+  --text-muted: #444444;
   --border-color: #e5e5e5;
   --border-dark: #1a1a1a;
   --accent-orange: #E85D2F;
@@ -1313,6 +1313,38 @@ em, i, .italic {
 
 .video-meta {
   padding: 16px;
+}
+
+
+/* Dark Mode Support for Holographic Cards */
+[data-theme="dark"] #holographic-grid .holographic-card {
+  background: #14161d !important;
+  color: #e0f7fa !important;
+  border: 1px solid rgba(0, 229, 255, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] #holographic-grid .holographic-card .card-details {
+  background: #14161d !important;
+  color: #e0f7fa !important;
+}
+
+[data-theme="dark"] #holographic-grid .holographic-card .work-title {
+  color: #00ffff !important;
+}
+
+[data-theme="dark"] #holographic-grid .holographic-card .work-status-badge {
+  background: rgba(0, 229, 255, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 229, 255, 0.3) !important;
+}
+
+[data-theme="dark"] #holographic-grid .holographic-card .work-material-tag {
+  color: #80deea !important;
+}
+
+[data-theme="dark"] #holographic-grid .holographic-card .work-annotation {
+  color: #b2ebf2 !important;
 }
 
 /* Lightbox Modal */
