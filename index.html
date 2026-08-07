@@ -583,19 +583,25 @@ em, i, .italic {
   color: #ffffff !important;
 }
 
-/* Section Background Themes — Punchier Darker Orange in Light Mode */
+/* Section Background Themes — Rich Deep Orange matching Instantiated saturation */
 .filterable-section[data-section="potential"] {
-  background: rgba(255, 51, 0, 0.14) !important;
-  border: 1.5px solid rgba(255, 51, 0, 0.5) !important;
+  background: #331100 !important;
+  color: #ffebe6 !important;
+  border: 1.5px solid rgba(255, 85, 0, 0.5) !important;
   border-radius: 12px;
-  padding: 44px 32px;
+  padding: 48px 32px;
   margin-bottom: 48px;
-  box-shadow: 0 12px 40px rgba(255, 51, 0, 0.15) !important;
+  box-shadow: 0 16px 48px rgba(51, 17, 0, 0.6) !important;
+}
+
+.filterable-section[data-section="potential"] p,
+.filterable-section[data-section="potential"] div {
+  color: inherit;
 }
 
 [data-theme="dark"] .filterable-section[data-section="potential"] {
-  background: rgba(255, 51, 0, 0.2) !important;
-  border-color: rgba(255, 51, 0, 0.65) !important;
+  background: #2b0e00 !important;
+  border-color: rgba(255, 85, 0, 0.65) !important;
 }
 
 .filterable-section[data-section="potential"] .section-header.potential-marker {
@@ -1518,7 +1524,7 @@ em, i, .italic {
     <div class="filter-bar" id="filter-bar">
       <button class="filter-chip active" data-filter="all">All Works (18)</button>
       <button class="filter-chip" data-filter="potential">Plane 1: Pure Potential</button>
-      <button class="filter-chip" data-filter="instantiated">Plane 2: Instantiated</button>
+      <button class="filter-chip" data-filter="instantiated">Plane 2: Holographic Iteration</button>
       <button class="filter-chip" data-filter="asshole">Corpus I — Asshole</button>
       <button class="filter-chip" data-filter="prick">Corpus II — Prick</button>
       <button class="filter-chip" data-filter="material">Material Studies</button>
@@ -1557,7 +1563,7 @@ em, i, .italic {
     <img src="hero.jpg" alt="Instantiated Mirror Apparatus — Technosomatic Architecture" id="hero-img">
     <div class="hero-overlay-badge">
       <h4>Instantiated Mirror Apparatus</h4>
-      <p>Plane 2: Physical Instantiation | Physical Mirror on Gallery Substrate</p>
+      <p>Plane 2: Holographic Iteration | Physical Mirror on Gallery Substrate</p>
     </div>
   </div>
 </div>
@@ -1577,7 +1583,7 @@ em, i, .italic {
 
     <p>The speculative material investigations—<em>"this explores what happens if embroidered," "this explores what happens if weathered"</em>—are research proposals. They map what could be made real. Some will be. Some will remain in the realm of pure potential—and both states are equally valid. The work generates knowledge in both registers.</p>
 
-    <h3 style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; margin: 32px 0 12px; text-transform: uppercase; letter-spacing: -0.5px; color: #00ffff; background: #003333; padding: 6px 14px; border-radius: 4px; display: inline-block;">Plane 2: Physical <em>Instantiation</em></h3>
+    <h3 style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; margin: 32px 0 12px; text-transform: uppercase; letter-spacing: -0.5px; color: #00ffff; background: #003333; padding: 6px 14px; border-radius: 4px; display: inline-block;">Plane 2: Physical <em>Holographic Iteration</em></h3>
     <p>Materialized research. The work has crossed the threshold from digital to physical—the mirror now exists in space, reflects your face, forces your complicity through apparatus rather than screen. The holographic iterations that preceded it document the liminal zone between the two planes. The mirror itself proves that one thread of this investigation can become real.</p>
 
     <p>But the mirror's existence does not foreclose the digital plane. The pure potential states continue to generate formal possibilities that the materialized mirror cannot capture. They are not made obsolete by instantiation.</p>
@@ -1686,7 +1692,7 @@ em, i, .italic {
       <img src="gallery_context.png" alt="Portrait of an Asshole — Gallery Context View" id="context-view-img">
       <div class="hero-overlay-badge">
         <h4>Gallery Context View — Spatial Installation</h4>
-        <p>Plane 2: Physical Instantiation | Physical Mirror Apparatus Installed in Gallery Space</p>
+        <p>Plane 2: Holographic Iteration | Physical Mirror Apparatus Installed in Gallery Space</p>
       </div>
     </div>
 
@@ -2390,7 +2396,7 @@ holoGrid.innerHTML = `
 
 // Hero Click Handlers
 document.getElementById('hero-trigger').addEventListener('click', () => {
-  openLightboxBySrc('Mockup__2_.jpg', 'Instantiated Mirror Apparatus', 'Plane 2: Physical Instantiation | Physical Mirror in Space reflecting viewer complicity.');
+  openLightboxBySrc('Mockup__2_.jpg', 'Instantiated Mirror Apparatus', 'Plane 2: Holographic Iteration | Physical Mirror in Space reflecting viewer complicity.');
 });
 document.getElementById('instantiated-hero-trigger').addEventListener('click', () => {
   openLightboxBySrc('Mockup__2_.jpg', 'Materialized Installation Mirror', 'Physical Substrate | Refractive Complicity');
